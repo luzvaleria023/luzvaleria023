@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LUNARA</title>
+    <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .icono-centrado {
+    display: flex;
+    flex-direction: column; /* Estructura vertical */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px; /* Espaciado entre elementos */
+    color: white; /* Puedes ajustar el color según tu diseño */
+}
+
+.icono {
+    width: 80px; /* Tamaño ajustable */
+    height: 80px;
+    border-radius: 50%; /* Hace el ícono redondeado */
+    object-fit: cover; /* Ajusta la imagen dentro del círculo */
+    border: 2px solid white; /* Opcional: borde blanco */
+}
+
+.texto-logo .texto-verde {
+    font-size: 36px; /* Tamaño grande para el primer texto */
+    font-weight: bold;
+    text-align: center;
+}
+
+.texto-logo .texto-lunara {
+    font-size: 28px; /* Tamaño ajustado para el subtítulo */
+    text-align: center;
+}
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Diseño general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Contenedor principal */
+.platillo {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Carrusel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: 400px;
+  margin: 10px 0;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  min-width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+/* Estilización para el diseño de los botones redondos rosados */
+.navigation .prev,
+.navigation .next {
+  background-color: #ff69b4; /* Rosa vibrante */
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 10px;
+  border-radius: 50%; /* Hace los botones redondos */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation .prev:hover,
+.navigation .next:hover {
+  background-color: #ff1493; /* Un rosa más oscuro al pasar el cursor */
+}
+
+
+/* Estilización para el texto */
+h2 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.precio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.precio p {
+  font-size: 18px;
+  color: #555;
+}
+
+.precio button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.precio button:hover {
+  background-color: #0056b3;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header class="encabezado">
+    <div class="contenedor-navegacion">
+        <div class="contenido-navegacion contenedor">
+            <div class="logo">
+                <h2>Lunara</h2>
+            </div>
+            
+            <div class="hamburguesa">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contenido-header">
+    <div class="contenedor-encabezado">
+        <div class="texto-encabezado">
+            <div class="icono-centrado">
+                <img src="icono.jpeg" alt="" class="icono">
+                <div class="texto-logo">
+                    <h2 class="texto-verde">Emprendimiento Verde</h2>
+                    <h3 class="texto-lunara">Lunara</h3>
+                </div>
+            </div>
+        </div>
+        <video autoplay loop muted>
+            <source src="bg_video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+</div>
+</header>
+
+
+    <section class="menu contenedor">
+    <h2 class="texto-platillos">Tés Populares</h2>
+    <div class="botones-platillos">
+    </div>
+    <div class="platillos">
+    <div class="platillo" data-te="manzanilla">
+      <div class="carousel-container">
+        <div class="carousel">
+          <img data-src="img2.jpeg" alt="Manzanilla 1" />
+          <img data-src="img3.jpeg" alt="Manzanilla 2" />
+          <img data-src="img4.jpeg" alt="Manzanilla 3" />
+          <img data-src="img5.jpeg" alt="Manzanilla 4" />
+          <img data-src="img6.jpeg" alt="Manzanilla 5" />
+          <img data-src="img7.jpeg" alt="Manzanilla 6" />
+          <img data-src="img1.jpeg" alt="Manzanilla 7" />
+        </div>
+        <div class="navigation">
+          <button class="prev">◀</button>
+          <button class="next">▶</button>
+        </div>
+      </div>
+      <h2>Manzanilla</h2>
+      <p>
+        La manzanilla es una planta medicinal ampliamente conocida por sus propiedades calmantes y antiinflamatorias. Su uso para aliviar los cólicos menstruales tiene una base en la medicina tradicional y también está respaldado por algunos estudios.<br><br>
+        1. Propiedades antiespasmódicas:<br>
+        * Contiene compuestos como la apigenina, que ayudan a relajar los músculos del útero, reduciendo los espasmos y el dolor causado por los cólicos.<br><br>
+        2. Efecto antiinflamatorio:<br>
+        * Sus flavonoides, como la luteolina, tienen propiedades antiinflamatorias que ayudan a disminuir la inflamación en el útero, aliviando la presión y el malestar.<br><br>
+        3. Mejora la circulación:<br>
+        * Mejora el flujo sanguíneo, lo que puede reducir la acumulación de sustancias inflamatorias en la zona pélvica.<br><br>
+        4. Relajación general:<br>
+        * Su efecto calmante reduce el estrés y la ansiedad, lo que puede intensificar la percepción del dolor. Una mente relajada contribuye a un mayor bienestar general.<br><br>
+        5. Regulación de prostaglandinas:<br>
+        * Ayuda a reducir la producción excesiva de estas sustancias, disminuyendo la intensidad de los cólicos.
+      </p>
+      <div class="precio">
+        <p>$12.00</p>
+        <button><i class="fas fa-shopping-basket"></i></button>
+      </div>
+    </div>
+
+<div class="platillos">
+    <div class="platillo" data-te="menta">
+      <div class="carousel-container">
+        <div class="carousel">
+          <img data-src="img3.jpeg" alt="Menta 1" />
+          <img data-src="img4.jpeg" alt="Menta 2" />
+          <img data-src="img5.jpeg" alt="Menta 3" />
+          <img data-src="img6.jpeg" alt="Menta 4" />
+          <img data-src="img7.jpeg" alt="Menta 5" />
+          <img data-src="img2.jpeg" alt="Menta 6" />
+          <img data-src="img1.jpeg" alt="Menta 7" />
+        </div>
+        <div class="navigation">
+          <button class="prev">◀</button>
+          <button class="next">▶</button>
+        </div>
+      </div>
+      <h2>Menta</h2>
+      <p>
+        La menta, especialmente en su forma de aceite esencial o infusión, puede ser útil para aliviar los cólicos menstruales debido a sus propiedades antiespasmódicas, antiinflamatorias y analgésicas.<br><br>
+        1. Alivio del dolor:<br>
+        * La menta tiene un efecto analgésico natural, lo que puede ayudar a reducir la intensidad del dolor asociado con los cólicos menstruales.<br><br>
+        2. Relajación muscular:<br>
+        * Actúa como un antiespasmódico, reduciendo los espasmos musculares en el útero durante el ciclo menstrual, aliviando así los cólicos.<br><br>
+        3. Mejora la circulación:<br>
+        * El aceite esencial de menta mejora la circulación sanguínea, lo que puede reducir la inflamación y aliviar el dolor.<br><br>
+        4. Propiedades antiinflamatorias:<br>
+        * Disminuyen la hinchazón y la incomodidad durante el período menstrual.<br><br>
+        5. Efecto refrescante:<br>
+        * El mentol tiene un efecto refrescante y calmante sobre la piel, lo que puede proporcionar alivio adicional.
+      </p>
+      <div class="precio">
+        <p>$10.00</p>
+        <button><i class="fas fa-shopping-basket"></i></button>
+      </div>
+    </div>
+
+
+<div class="platillo" data-te="yerbanis">
+    <div class="carousel-container">
+      <div class="carousel">
+        <img data-src="img1.jpeg" alt="Bugambilia 1" />
+        <img data-src="img2.jpeg" alt="Bugambilia 2" />
+        <img data-src="img3.jpeg" alt="Bugambilia 3" />
+        <img data-src="img4.jpeg" alt="Bugambilia 4" />
+        <img data-src="img5.jpeg" alt="Bugambilia 5" />
+        <img data-src="img6.jpeg" alt="Bugambilia 6" />
+        <img data-src="img7.jpeg" alt="Bugambilia 7" />
+      </div>
+      <div class="navigation">
+        <button class="prev">◀</button>
+        <button class="next">▶</button>
+      </div>
+    </div>
+    <h2>Yerbanís</h2>
+    <p>
+        Se utiliza tradicionalmente como un remedio natural para aliviar los cólicos, especialmente los cólicos estomacales o los cólicos menstruales. El anís tiene propiedades antiespasmódicas, digestivas y carminativas, lo que lo hace efectivo para:<br><br>
+        1. Relajar los músculos del sistema digestivo:<br>
+        * Ayuda a aliviar el dolor causado por espasmos.<br><br>
+        2. Reducir la hinchazón:<br>
+        * Facilita la expulsión de gases, lo que puede aliviar el malestar abdominal.<br><br>
+        3. Calmar los cólicos menstruales:<br>
+        * Sus propiedades relajantes pueden disminuir los calambres uterinos.
+    </p>
+    <div class="precio">
+        <p>$9.00</p>
+        <button><i class="fas fa-shopping-basket"></i></button>
+    </div>
+</div>
+
+<div class="platillo" data-te="bugambilia">
+    <div class="carousel-container">
+      <div class="carousel">
+        <img data-src="img1.jpeg" alt="Bugambilia 1" />
+        <img data-src="img2.jpeg" alt="Bugambilia 2" />
+        <img data-src="img3.jpeg" alt="Bugambilia 3" />
+        <img data-src="img4.jpeg" alt="Bugambilia 4" />
+        <img data-src="img5.jpeg" alt="Bugambilia 5" />
+        <img data-src="img6.jpeg" alt="Bugambilia 6" />
+        <img data-src="img7.jpeg" alt="Bugambilia 7" />
+      </div>
+      <div class="navigation">
+        <button class="prev">◀</button>
+        <button class="next">▶</button>
+      </div>
+    </div>
+    <h2>Bugambilia</h2>
+    <p>
+      La bugambilia (Bougainvillea) es una planta ornamental conocida principalmente por su belleza, pero en algunas tradiciones de medicina natural se le atribuyen propiedades beneficiosas. En cuanto a su uso para los cólicos menstruales, no hay evidencia científica sólida que respalde directamente esta aplicación, pero en la medicina tradicional, algunas personas la utilizan debido a sus posibles propiedades antiespasmódicas y relajantes.<br><br>
+      1. Propiedades relajantes:<br>
+      * Se cree que el té de bugambilia puede ayudar a relajar los músculos, lo que podría aliviar los espasmos musculares asociados con los cólicos menstruales.<br><br>
+      2. Alivio del dolor:<br>
+      * Algunas personas consideran que ayuda a mitigar el dolor leve debido a sus posibles propiedades antiinflamatorias.<br><br>
+      3. Efectos calmantes:<br>
+      * En ciertas tradiciones, se utiliza para promover una sensación de calma que podría ser útil durante los cólicos menstruales.
+    </p>
+    <div class="precio">
+      <p>$11.00</p>
+      <button><i class="fas fa-shopping-basket"></i></button>
+    </div>
+  </div>
+    </div>
+</section>
+
+
+    <div class="separador">
+    <div class="contenido-separador contenedor">
+        <h2>Tés para empezar el día</h2>
+        <p>Comienza tu mañana con un té saludable y lleno de sabor.</p>
+        <a href="" class="btn btn-verde">Explorar Tés</a>
+    </div>
+</div>
+
+
+    <div class="formulario-contacto contenedor">
+
+        <div class="informacion-contacto">
+            <h3>Contactanos</h3>
+            <p><i class="fas fa-map-marker-alt"></i>Av. Constitución de 1857 No. 38, Col. Benito Juárez C.P. 78437 Soledad de Graciano Sánchez, S.L.P</p>
+            <p><i class="fas fa-envelope"></i> luzvalerialoredo@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i>+52 1 444 380 8312</p>
+            <div class="redes-sociales">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+
+        <form class="formulario">
+            <div class="input-formulario">
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder="Pedro" id="nombre">
+            </div>
+            <div class="input-formulario">
+                <label for="apellidos">Apellido</label>
+                <input type="text" placeholder="Pedro" id="apellidos">
+            </div>
+            <div class="input-formulario">
+                <label for="correo">Correo</label>
+                <input type="email" placeholder="ejemplo@ejemplo.com" id="correo">
+            </div>
+            <div class="input-formulario">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" placeholder="+52 123 456 7890" id="telefono">
+            </div>
+            <div class="input-formulario">
+                <label for="mensaje">Mensaje</label>
+                <textarea></textarea>
+            </div>
+            <div class="btn-formulario">
+                <input type="submit" class="btn btn-verde" value="Enviar">
+            </div>
+            
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".carousel");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let index = 0;
+
+  function showSlide() {
+    const totalSlides = document.querySelectorAll(".carousel img").length;
+    const translateX = -index * 100;
+    carousel.style.transform = `translateX(${translateX}%)`;
+
+    // Si llegamos al final, vuelve al inicio
+    if (index >= totalSlides) {
+      index = 0;
+    }
+  }
+
+  nextBtn.addEventListener("click", function () {
+    index++;
+    showSlide();
+  });
+
+  prevBtn.addEventListener("click", function () {
+    index--;
+    if (index < 0) index = document.querySelectorAll(".carousel img").length - 1;
+    showSlide();
+  });
+
+  // Despliegue automático
+  setInterval(function () {
+    index++;
+    showSlide();
+  }, 4000);
+});
+
+    </script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
